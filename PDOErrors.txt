@@ -1,3 +1,5 @@
 
 3 February, 2020, 10:50 am SQLSTATE[HY000] [1049] Unknown database 'grupito'
 3 February, 2020, 10:50 am SQLSTATE[HY000] [1049] Unknown database 'grupito'
+10 February, 2020, 10:57 am SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'email' cannot be null
+10 February, 2020, 10:57 am SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'email' cannot be null
