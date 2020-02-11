@@ -16,5 +16,11 @@
   </div>
 <?php
 }
+}
 ?>
 </div> <!-- col rows -->
+<?php function mostrarMensaje($mensaje){?>
+	<div class="jumbotron">
+		<div class="container">
+			<h1 class="display-5"><?php echo $mensaje; ?> </h1>
+<?php } ?>

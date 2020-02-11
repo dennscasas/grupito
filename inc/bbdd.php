@@ -125,7 +125,7 @@ function insertarUsuario($email, $password, $nombre, $apellidos, $direccion, $te
 		
 		$stmt = $con->prepare($sql);
 		
-		$stmt->bindParam(':email',$usuario);
+		$stmt->bindParam(':email',$email);
 		$stmt->bindParam(':password',$password);
 		$stmt->bindParam(':nombre',$nombre);
 		$stmt->bindParam(':apellidos',$apellidos);

@@ -69,9 +69,9 @@
 		  <li class="nav-item">
 			<a href="carrito.php" class="nav-link"><i class="fas fa-shopping-cart"></i> (0)</a>
 		  </li>
-		<?php if(isset($_SESSION['usuario'])){?>
+		<?php if(isset($_SESSION['login'])){?>
 		  <li class="nav-item dropdown">
-			<a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Bienvenido Fulanito</a>
+			<a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Bienvenido <?php echo $_SESSION['login'];?></a>
 			<div class="dropdown-menu" aria-labelledby="dropdown01">
 			  <a class="dropdown-item" href="misDatos.php">Mis Datos</a>
 			  <a class="dropdown-item" href="misPedidos.php">Mis Pedidos</a>

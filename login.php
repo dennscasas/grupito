@@ -66,7 +66,7 @@
 				
 				if($userOk){
 					$_SESSION["login"]=$email["email"];
-					header("Location: index.php"); //cambiar menu.php
+					header("Location: index.php");
 				}
 				else{
 					
