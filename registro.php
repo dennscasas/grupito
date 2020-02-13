@@ -1,7 +1,7 @@
 <?php session_start(); ?>
 <?php require_once("inc/bbdd.php");?>
-<?php	$pagina = "login";
-		$titulo = "Identifícate";
+<?php	$pagina = "Registro";
+		$titulo = "Registrate";
 ?>
 <?php require_once("inc/encabezado.php");?>
 <?php require_once("inc/funciones.php");?>
@@ -37,6 +37,7 @@
     <label for="telefono">Teléfono:</label>
     <input type="text" class="form-control" id="telefono" name="telefono" value="<?php echo $telefono;?>"/>
   </div>
+  <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
  <button type="submit" class="btn btn-secondary" name="guardar" value="insertarUsuario">Registrar usuario</button>
  <a href='login.php' class='btn btn-dark'>Volver al login</a>
  
@@ -69,7 +70,16 @@ else{
 	$telefono=recoge("telefono");
 	
 	$errores="";
+//Validar captcha
+	$recaptcha_url = 'https://www.google.com/recaptcha/api/siteverify'; 
+	$recaptcha_secret = CLAVE_SECRETA; 
+	$recaptcha_response = recoge('recaptcha_response'); 
+	$recaptcha = file_get_contents($recaptcha_url . '?secret=' . $recaptcha_secret . '&response=' . $recaptcha_response); 
+	$recaptcha = json_decode($recaptcha); 
 	
+	if($recaptcha->score < 0.7){
+		$errores = $errores."<li>Los robots no pueden registrarse :C</li>";
+	}
 	if($email == ""){
 		$errores = $errores."<li>El campo email no puede estar vacío</li>";
 	}
